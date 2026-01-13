@@ -1,14 +1,14 @@
 "use client"
 
-import {Button} from "@/components/ui/button"
-import {Input} from "@/components/ui/input"
-import {Search} from "lucide-react"
-import {Swiper, SwiperSlide} from "swiper/react";
-import {Autoplay, Navigation, Pagination} from "swiper/modules";
-import {Card, CardContent} from "@/components/ui/card";
-import {Tabs, TabsList, TabsTrigger} from "@/components/ui/tabs";
-import React, {useState} from "react";
-import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select";
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Search, MapPin, Home as HomeIcon, DollarSign } from "lucide-react"
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import React, { useState } from "react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export default function HeroSection() {
   const [searchLocation, setSearchLocation] = useState('');
@@ -37,9 +37,9 @@ export default function HeroSection() {
         modules={[Navigation, Pagination, Autoplay]}
         navigation={false}
         pagination={false}
-        autoplay={{delay: 5000}}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
         loop
-        className="h-[800px]"
+        className="h-[800px] hero-swiper"
       >
         {heroSlides.map((slide, index) => (
           <SwiperSlide key={index}>
@@ -49,75 +49,30 @@ export default function HeroSection() {
                 alt={slide.title}
                 className="w-full h-full object-cover"
               />
+              {/* Enhanced Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70"></div>
+
+              {/* Animated Hero Text */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 animate-fade-in-up drop-shadow-2xl">
+                  {slide.title}
+                </h1>
+                <p className="text-xl md:text-2xl lg:text-3xl text-white/95 mb-8 animate-fade-in-up animation-delay-200 drop-shadow-lg max-w-3xl">
+                  {slide.subtitle}
+                </p>
+                <div className="flex gap-4 animate-fade-in-up animation-delay-400">
+                  <Button size="lg" className="gradient-bg hover:opacity-90 transition-all duration-300 dark:text-white dark:hover:text-white shadow-2xl hover:shadow-primary/50 hover:scale-105 text-lg px-8 py-6">
+                    Explore Properties
+                  </Button>
+                  <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20 transition-all duration-300 shadow-2xl hover:scale-105 text-lg px-8 py-6">
+                    Learn More
+                  </Button>
+                </div>
+              </div>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
-
-      {/* Search Box */}
-      <div
-        className="absolute"
-        style={{
-          top: '55%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: '100%',
-          maxWidth: '1200px',
-          zIndex: 10
-        }}
-      >
-        <div className="container mx-auto p-10">
-          <Card>
-            <CardContent className="p-6">
-              <Tabs defaultValue="buy" className="w-full">
-                <TabsList className="grid w-full max-w-sm mx-auto grid-cols-2 mb-6">
-                  <TabsTrigger value="buy">Buy</TabsTrigger>
-                  <TabsTrigger value="rent">Rent</TabsTrigger>
-                </TabsList>
-
-                <div className="flex flex-col md:flex-row gap-4">
-                  <div className="flex-1">
-                    <Input
-                      className={'w-full'}
-                      placeholder="Enter Location"
-                      value={searchLocation}
-                      onChange={(e) => setSearchLocation(e.target.value)}
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <Select>
-                      <SelectTrigger className="w-full">
-                        <SelectValue placeholder="Property Type" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="Apartment">Apartment</SelectItem>
-                        <SelectItem value="House">House</SelectItem>
-                        <SelectItem value="Villa">Villa</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="flex-1">
-                    <Select>
-                      <SelectTrigger className="w-full">
-                        <SelectValue placeholder="Price Range" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="0৳ - 5,000৳">0৳ - 5,000৳</SelectItem>
-                        <SelectItem value="5,000৳ - 10,000৳">5,000৳ - 10,000৳</SelectItem>
-                        <SelectItem value="10,000+৳">10,000+৳</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <Button>
-                    <Search className="w-5 h-5 mr-2"/>
-                    Search
-                  </Button>
-                </div>
-              </Tabs>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
     </section>
   )
 }

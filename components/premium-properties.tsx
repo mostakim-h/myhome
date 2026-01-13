@@ -3,9 +3,10 @@
 import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
-import {Button} from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
 import React from "react"
 import ProductCard from "@/components/product-card";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Property {
   id: number;
@@ -49,7 +50,7 @@ export default function PremiumPropertiesSection() {
     },
     {
       id: 3,
-      title: 'Ocean Vieuw Lounge',
+      title: 'Ocean View Lounge',
       price: '$15,000',
       location: 'Miami, Florida',
       beds: 4,
@@ -74,11 +75,20 @@ export default function PremiumPropertiesSection() {
   return (
     <section className="py-24">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-gray-900">Premium Property Picks</h2>
-        <div className="flex items-center justify-end mb-6">
-          <div className="flex gap-2">
-            <Button variant="outline" size="icon">←</Button>
-            <Button variant="outline" size="icon">→</Button>
+        <div className="flex items-center justify-between mb-8">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
+              Premium <span className="gradient-text">Property Picks</span>
+            </h2>
+            <p className="text-muted-foreground text-center">Handpicked properties just for you</p>
+          </div>
+          <div className="hidden md:flex gap-2">
+            <Button variant="outline" size="icon" className="hover:bg-primary/10 transition-all duration-300">
+              <ChevronLeft className="w-5 h-5" />
+            </Button>
+            <Button variant="outline" size="icon" className="hover:bg-primary/10 transition-all duration-300">
+              <ChevronRight className="w-5 h-5" />
+            </Button>
           </div>
         </div>
 

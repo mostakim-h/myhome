@@ -1,8 +1,8 @@
 import React from 'react';
-import {Card, CardContent} from "@/components/ui/card";
-import {Bath, Bed, MapPin, Maximize} from "lucide-react";
-import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
-import {Badge} from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { Bath, Bed, MapPin, Maximize } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
 import ProductCard from "@/components/product-card";
 
 interface Property {
@@ -46,7 +46,7 @@ const premiumProperties: Property[] = [
   },
   {
     id: 3,
-    title: 'Ocean Vieuw Lounge',
+    title: 'Ocean View Lounge',
     price: '$15,000',
     location: 'Miami, Florida',
     beds: 4,
@@ -73,17 +73,18 @@ function AllProperties() {
     <section className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <p className="text-primary font-semibold mb-2">CHECKOUT OUR NEW</p>
-          <h2 className="text-4xl font-bold text-gray-900">Discover Your Perfect Place</h2>
+          <p className="text-primary font-semibold mb-2 tracking-wider uppercase text-sm">CHECKOUT OUR NEW</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-2">Discover Your <span className="gradient-text">Perfect Place</span></h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">Browse through our curated selection of premium properties</p>
         </div>
 
         <Tabs defaultValue="apartment" className="w-full">
-          <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-5 mb-12">
-            <TabsTrigger value="apartment">Apartment</TabsTrigger>
-            <TabsTrigger value="house">House</TabsTrigger>
-            <TabsTrigger value="villa">Villa</TabsTrigger>
-            <TabsTrigger value="condo">Condo</TabsTrigger>
-            <TabsTrigger value="office">Office</TabsTrigger>
+          <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-5 mb-12 bg-secondary/50">
+            <TabsTrigger value="apartment" className="data-[state=active]:gradient-bg data-[state=active]:text-black">Apartment</TabsTrigger>
+            <TabsTrigger value="house" className="data-[state=active]:gradient-bg data-[state=active]:text-black">House</TabsTrigger>
+            <TabsTrigger value="villa" className="data-[state=active]:gradient-bg data-[state=active]:text-black">Villa</TabsTrigger>
+            <TabsTrigger value="condo" className="data-[state=active]:gradient-bg data-[state=active]:text-black">Condo</TabsTrigger>
+            <TabsTrigger value="office" className="data-[state=active]:gradient-bg data-[state=active]:text-black">Office</TabsTrigger>
           </TabsList>
 
           <TabsContent value="apartment">

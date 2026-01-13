@@ -17,17 +17,16 @@ import Footer from "@/components/footer";
 const Home: React.FC = () => {
 
   return (
-    <div className="min-h-screen">
-      <Header/>
-      <HeroSection/>
-      <PremiumPropertiesSection/>
-      <ContactForm/>
-      <FeaturedAreasSection/>
-      <hr className={'border-dashed border-2 '} />
-      <AllProperties/>
-      <RealEstateAdvisors/>
-      <TestimonialsSection/>
-      <Footer/>
+    <div className="min-h-screen smooth-scroll">
+      <Header />
+      <HeroSection />
+      <PremiumPropertiesSection />
+      <ContactForm />
+      <FeaturedAreasSection />
+      <AllProperties />
+      <RealEstateAdvisors />
+      <TestimonialsSection />
+      <Footer />
     </div>
   );
 }

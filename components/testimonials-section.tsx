@@ -1,7 +1,8 @@
 "use client"
 
-import {Card, CardContent} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import React from "react";
+import { Quote, Star } from "lucide-react";
 
 interface Testimonial {
   id: number;
@@ -66,24 +67,30 @@ export default function TestimonialsSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Testimonials */}
           <div>
-            <p className="text-primary font-semibold mb-2">WHAT THEY SAY</p>
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">
-              Read Testimonials from Our Satisfied Clients
+            <p className="text-primary font-semibold mb-2 tracking-wider uppercase text-sm">WHAT THEY SAY</p>
+            <h2 className="text-2xl font-bold mb-8">
+              Read <span className="gradient-text">Testimonials</span> from Our Satisfied Clients
             </h2>
 
             {testimonials.map((testimonial) => (
-              <Card key={testimonial.id} className="mb-6">
-                <CardContent className="p-6">
-                  <p className="text-gray-600 mb-4">{testimonial.content}</p>
+              <Card key={testimonial.id} className="mb-6 glass border-border/50 hover:shadow-xl transition-all duration-300">
+                <CardContent>
+                  <Quote className="w-10 h-10 text-primary/30 mb-4" />
+                  <p className="text-muted-foreground mb-4 italic">"{testimonial.content}"</p>
+                  <div className="flex items-center gap-2 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                    ))}
+                  </div>
                   <div className="flex items-center gap-4">
                     <img
                       src={testimonial.avatar}
                       alt={testimonial.name}
-                      className="w-12 h-12 rounded-full object-cover"
+                      className="w-12 h-12 rounded-full object-cover ring-2 ring-primary/20"
                     />
                     <div>
                       <h4 className="font-bold">{testimonial.name}</h4>
-                      <p className="text-sm text-gray-600">{testimonial.role}</p>
+                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -93,23 +100,25 @@ export default function TestimonialsSection() {
 
           {/* Blog */}
           <div>
-            <p className="text-primary font-semibold mb-2">FROM OUR BLOG</p>
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">
-              Dream Home Found: Experience Our Client&#39;s Buying Journey
+            <p className="text-primary font-semibold mb-2 tracking-wider uppercase text-sm">FROM OUR BLOG</p>
+            <h2 className="text-2xl font-bold mb-8">
+              Dream Home Found: Experience Our Client's <span className="gradient-text">Buying Journey</span>
             </h2>
 
             <div className="space-y-6">
               {blogPosts.map((post) => (
-                <Card key={post.id} className="overflow-hidden hover:shadow-xl transition-shadow cursor-pointer">
+                <Card key={post.id} className="p-0 group overflow-hidden hover:shadow-xl transition-all duration-500 cursor-pointer border-border/50 hover:scale-[1.02]">
                   <div className="flex">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-32 h-32 object-cover"
-                    />
+                    <div className="relative w-32 h-32 overflow-hidden flex-shrink-0">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    </div>
                     <CardContent className="p-4 flex-1">
-                      <p className="text-sm text-gray-500 mb-2">{post.date}</p>
-                      <h3 className="font-bold text-lg">{post.title}</h3>
+                      <p className="text-sm text-primary mb-2">{post.date}</p>
+                      <h3 className="font-bold text-lg group-hover:text-primary transition-colors">{post.title}</h3>
                     </CardContent>
                   </div>
                 </Card>
