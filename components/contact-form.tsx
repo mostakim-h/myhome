@@ -32,7 +32,7 @@ function ContactForm() {
     {
       icon: Phone,
       title: "Call Us",
-      detail: "+880 1234-567890",
+      detail: "+8801812932328",
       description: "Mon-Fri 9am to 6pm"
     },
     {

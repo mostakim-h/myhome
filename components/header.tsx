@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Home, User, Menu } from "lucide-react"
 import React from "react"
 import { ThemeToggle } from "./theme-toggle"
+import Link from "next/link"
 
 export default function Header() {
 
@@ -23,10 +24,10 @@ export default function Header() {
           </div>
 
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#" className="text-foreground/80 hover:text-primary transition-all duration-300 font-medium hover:scale-105 inline-block">Home</a>
-            <a href="#" className="text-foreground/80 hover:text-primary transition-all duration-300 font-medium hover:scale-105 inline-block">Land Sale</a>
-            <a href="#" className="text-foreground/80 hover:text-primary transition-all duration-300 font-medium hover:scale-105 inline-block">Flat Sale</a>
-            <a href="#" className="text-foreground/80 hover:text-primary transition-all duration-300 font-medium hover:scale-105 inline-block">About us</a>
+            <Link href="/" className="text-foreground/80 hover:text-primary transition-all duration-300 font-medium hover:scale-105 inline-block">Home</Link>
+            <Link href="/land-sale" className="text-foreground/80 hover:text-primary transition-all duration-300 font-medium hover:scale-105 inline-block">Land Sale</Link>
+            <Link href="/flat-sale" className="text-foreground/80 hover:text-primary transition-all duration-300 font-medium hover:scale-105 inline-block">Flat Sale</Link>
+            <Link href="/about" className="text-foreground/80 hover:text-primary transition-all duration-300 font-medium hover:scale-105 inline-block">About us</Link>
           </nav>
 
           <div className="flex items-center gap-3">
