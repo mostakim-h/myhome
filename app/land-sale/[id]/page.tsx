@@ -58,10 +58,10 @@ export default function PropertyDetailsPage({ params }: { params: Promise<{ id: 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute top-4 right-4 flex gap-2">
-                    <Button size="icon" variant="secondary" className="bg-white/90 hover:bg-white backdrop-blur-sm">
+                    <Button size="icon" variant="secondary" className="bg-white/90 dark:text-black hover:bg-white backdrop-blur-sm">
                       <Heart className="w-5 h-5" />
                     </Button>
-                    <Button size="icon" variant="secondary" className="bg-white/90 hover:bg-white backdrop-blur-sm">
+                    <Button size="icon" variant="secondary" className="bg-white/90 dark:text-black hover:bg-white backdrop-blur-sm">
                       <Share2 className="w-5 h-5" />
                     </Button>
                   </div>
