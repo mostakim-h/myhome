@@ -39,7 +39,7 @@ export default function HeroSection() {
         pagination={false}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         loop
-        className="h-[800px] hero-swiper"
+        className="h-[92dvh] hero-swiper"
       >
         {heroSlides.map((slide, index) => (
           <SwiperSlide key={index}>

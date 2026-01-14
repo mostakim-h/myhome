@@ -29,10 +29,10 @@ function ProductCard({ property }: { property: Props }) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div className="absolute top-4 left-4 flex gap-2">
           {property.forSale && (
-            <Badge className="bg-destructive/90 backdrop-blur-sm hover:bg-destructive">For Sale</Badge>
+            <Badge className="bg-destructive/90 text-white backdrop-blur-sm hover:bg-destructive">For Sale</Badge>
           )}
           {property.forRent && (
-            <Badge className="bg-chart-2/90 backdrop-blur-sm hover:bg-chart-2">For Rent</Badge>
+            <Badge className="bg-chart-2/90 text-white backdrop-blur-sm hover:bg-chart-2">For Rent</Badge>
           )}
         </div>
       </div>
