@@ -130,13 +130,3 @@ Feel free to open issues or PRs. A suggested workflow:
 ## License
 
 This project currently has no license file. Add a LICENSE (e.g., MIT) if you plan to publish it.
-
-
----
-
-If you'd like, I can also:
-- Add a short CONTRIBUTING.md and ISSUE_TEMPLATE.
-- Wire up a basic GitHub Actions workflow for lint + build checks.
-- Add a small example unit test and configure Jest/Playwright.
-
-Tell me which of those you'd like next.
